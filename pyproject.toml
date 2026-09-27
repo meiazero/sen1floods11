@@ -1,0 +1,27 @@
+[project]
+name = "sen1floods11"
+version = "0.1.0"
+description = "Download, compact and verify Sen1Floods11"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=2.1",
+  "rasterio>=1.4",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM", "C4", "PTH", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]
